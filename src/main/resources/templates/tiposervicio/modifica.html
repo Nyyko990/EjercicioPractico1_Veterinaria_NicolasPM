@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: base(~{::title}, ~{::main})}">
+    <head>
+        <title th:text="#{aplicacion.titulo} + ' - ' + #{tiposervicio.titulo}">PetShop</title>
+    </head>
+    <body>
+        <main class="py-3">
+            <section th:replace="~{tiposervicio/fragmentos :: editar}"/>
+        </main>
+    </body>
+</html>
