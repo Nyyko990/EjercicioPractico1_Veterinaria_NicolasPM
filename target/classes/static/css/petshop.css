@@ -1,0 +1,199 @@
+/* Paleta de PetShop */
+:root {
+    --ps-naranja: #FF9F48;
+    --ps-amarillo: #FFCF72;
+    --ps-azul: #8DBEFF;
+    --ps-verde: #A6CF6F;
+    --ps-marron: #D19F84;
+    --ps-fondo: #FFF8EE;
+    --ps-texto: #4a3b32;
+    --ps-radio: 14px;
+    --ps-sombra: 0 4px 14px rgba(209, 159, 132, 0.25);
+}
+
+body {
+    background-color: var(--ps-fondo);
+    color: var(--ps-texto);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: #3f7fd6;
+}
+
+/* Header */
+#main-header {
+    background: linear-gradient(135deg, var(--ps-amarillo), var(--ps-naranja));
+    color: var(--ps-texto) !important;
+}
+
+#main-header h1 {
+    font-weight: 700;
+}
+
+/* Navbar */
+.navbar-petshop {
+    background-color: var(--ps-naranja);
+    box-shadow: var(--ps-sombra);
+}
+
+.navbar-petshop .navbar-brand,
+.navbar-petshop .nav-link {
+    color: #fff;
+    font-weight: 600;
+}
+
+.navbar-petshop .nav-link:hover,
+.navbar-petshop .nav-link:focus {
+    color: var(--ps-texto);
+}
+
+.navbar-petshop .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Footer */
+.footer-petshop {
+    background-color: var(--ps-marron);
+}
+
+/* Tarjetas, modales y tablas */
+.card,
+.modal-content,
+.toast {
+    border-radius: var(--ps-radio);
+    border: 1px solid var(--ps-marron);
+    box-shadow: var(--ps-sombra);
+    overflow: hidden;
+}
+
+.card-header,
+.modal-header,
+.toast-header {
+    border-bottom: 1px solid var(--ps-marron);
+}
+
+.table {
+    --bs-table-striped-bg: rgba(255, 207, 114, 0.18);
+    --bs-table-hover-bg: rgba(255, 159, 72, 0.15);
+}
+
+.form-control,
+.form-select {
+    border-radius: 10px;
+    border-color: var(--ps-marron);
+}
+
+/* Botones con la paleta */
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--ps-naranja);
+    --bs-btn-border-color: var(--ps-naranja);
+    --bs-btn-color: #fff;
+    --bs-btn-hover-bg: #e88a30;
+    --bs-btn-hover-border-color: #e88a30;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-bg: #d97a22;
+    --bs-btn-active-border-color: #d97a22;
+    --bs-btn-active-color: #fff;
+    --bs-btn-disabled-bg: var(--ps-naranja);
+    --bs-btn-disabled-border-color: var(--ps-naranja);
+}
+
+.btn-success {
+    --bs-btn-bg: var(--ps-verde);
+    --bs-btn-border-color: var(--ps-verde);
+    --bs-btn-color: #2f3d1a;
+    --bs-btn-hover-bg: #92bb5a;
+    --bs-btn-hover-border-color: #92bb5a;
+    --bs-btn-hover-color: #2f3d1a;
+    --bs-btn-active-bg: #84ab4d;
+    --bs-btn-active-border-color: #84ab4d;
+    --bs-btn-active-color: #2f3d1a;
+    --bs-btn-disabled-bg: var(--ps-verde);
+    --bs-btn-disabled-border-color: var(--ps-verde);
+}
+
+.btn-info {
+    --bs-btn-bg: var(--ps-azul);
+    --bs-btn-border-color: var(--ps-azul);
+    --bs-btn-color: #12335e;
+    --bs-btn-hover-bg: #74abf0;
+    --bs-btn-hover-border-color: #74abf0;
+    --bs-btn-hover-color: #12335e;
+    --bs-btn-active-bg: #639ce4;
+    --bs-btn-active-border-color: #639ce4;
+    --bs-btn-active-color: #12335e;
+    --bs-btn-disabled-bg: var(--ps-azul);
+    --bs-btn-disabled-border-color: var(--ps-azul);
+}
+
+.btn-warning {
+    --bs-btn-bg: var(--ps-amarillo);
+    --bs-btn-border-color: var(--ps-amarillo);
+    --bs-btn-color: #5a3d00;
+    --bs-btn-hover-bg: #f5bf55;
+    --bs-btn-hover-border-color: #f5bf55;
+    --bs-btn-hover-color: #5a3d00;
+    --bs-btn-active-bg: #eeb343;
+    --bs-btn-active-border-color: #eeb343;
+    --bs-btn-active-color: #5a3d00;
+    --bs-btn-disabled-bg: var(--ps-amarillo);
+    --bs-btn-disabled-border-color: var(--ps-amarillo);
+}
+
+/* Colores de fondo de Bootstrap con la paleta */
+.bg-success {
+    background-color: var(--ps-verde) !important;
+    color: #2f3d1a !important;
+}
+
+.bg-info {
+    background-color: var(--ps-azul) !important;
+    color: #12335e !important;
+}
+
+.bg-warning {
+    background-color: var(--ps-amarillo) !important;
+    color: #5a3d00 !important;
+}
+
+.bg-primary {
+    background-color: var(--ps-naranja) !important;
+}
+
+.bg-light {
+    background-color: rgba(255, 207, 114, 0.25) !important;
+    border-radius: var(--ps-radio);
+}
+
+.toast-header.text-white {
+    color: var(--ps-texto) !important;
+}
+
+/* Animación del modal de eliminar */
+.animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 576px) {
+    #main-header h1 {
+        font-size: 1.6rem;
+    }
+}

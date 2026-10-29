@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- Plantilla base: cada página la usa con th:replace pasando su <title> y su <main> -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:fragment="base(titulo, contenido)" lang="es">
+    <head>
+        <title th:replace="${titulo}">PetShop</title>
+        <th:block th:replace="~{general/fragmentos :: head}"/>
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+        <header th:replace="~{general/fragmentos :: header}"/>
+        <nav th:replace="~{general/fragmentos :: navbar}"/>
+        <section th:replace="~{general/fragmentos :: mostrarToast}"/>
+        <th:block th:replace="${contenido}"/>
+        <footer th:replace="~{general/fragmentos :: footer}"/>
+    </body>
+</html>

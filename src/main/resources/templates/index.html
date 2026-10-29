@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: base(~{::title}, ~{::main})}">
+    <head>
+        <title th:text="#{aplicacion.titulo} + ' - ' + #{index.titulo}">PetShop</title>
+    </head>
+    <body>
+        <main class="container py-5 text-center">
+            <h2><i class="fas fa-paw"></i> [[#{aplicacion.titulo}]]</h2>
+            <p class="lead">[[#{plantilla.eslogan}]]</p>
+        </main>
+    </body>
+</html>
