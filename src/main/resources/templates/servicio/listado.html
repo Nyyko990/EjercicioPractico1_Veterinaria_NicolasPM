@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout/base :: base(~{::title}, ~{::main})}">
+    <head>
+        <title th:text="#{aplicacion.titulo} + ' - ' + #{servicio.titulo}">PetShop</title>
+    </head>
+    <body>
+        <main>
+            <section th:replace="~{servicio/fragmentos :: agregar}"/>
+            <section th:replace="~{servicio/fragmentos :: listado}"/>
+            <section th:replace="~{servicio/fragmentos :: confirmarEliminar}"/>
+        </main>
+    </body>
+</html>
