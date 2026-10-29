@@ -197,3 +197,26 @@ a {
         font-size: 1.6rem;
     }
 }
+
+/* Página de inicio */
+.icono-info {
+    color: var(--ps-naranja);
+}
+
+.campana {
+    background: linear-gradient(135deg, var(--ps-amarillo), var(--ps-naranja));
+    border-radius: var(--ps-radio);
+    box-shadow: var(--ps-sombra);
+    color: var(--ps-texto);
+}
+
+.video-petshop {
+    border-radius: var(--ps-radio);
+    border: 3px solid var(--ps-marron);
+    box-shadow: var(--ps-sombra);
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}

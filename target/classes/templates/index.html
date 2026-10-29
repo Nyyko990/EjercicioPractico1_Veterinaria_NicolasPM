@@ -6,9 +6,106 @@
         <title th:text="#{aplicacion.titulo} + ' - ' + #{index.titulo}">PetShop</title>
     </head>
     <body>
-        <main class="container py-5 text-center">
-            <h2><i class="fas fa-paw"></i> [[#{aplicacion.titulo}]]</h2>
-            <p class="lead">[[#{plantilla.eslogan}]]</p>
+        <main>
+            <!-- Información de la clínica -->
+            <section class="container py-5">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center p-3">
+                            <div class="card-body">
+                                <i class="fas fa-clock fa-3x icono-info mb-3"></i>
+                                <h4>[[#{index.horario.titulo}]]</h4>
+                                <p class="mb-0">[[#{plantilla.horario}]]</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center p-3">
+                            <div class="card-body">
+                                <i class="fas fa-location-dot fa-3x icono-info mb-3"></i>
+                                <h4>[[#{index.ubicacion.titulo}]]</h4>
+                                <p class="mb-0">[[#{plantilla.ubicacion}]]</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 text-center p-3">
+                            <div class="card-body">
+                                <i class="fas fa-stethoscope fa-3x icono-info mb-3"></i>
+                                <h4>[[#{index.especialidades.titulo}]]</h4>
+                                <p class="mb-0">[[#{index.especialidades.texto}]]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Campaña destacada del mes -->
+            <section class="container pb-5">
+                <div class="campana p-4 p-md-5 text-center">
+                    <span class="badge bg-info mb-3">[[#{index.campana.mes}]]</span>
+                    <h2><i class="fas fa-syringe"></i> [[#{index.campana.titulo}]]</h2>
+                    <p class="lead">[[#{index.campana.texto}]]</p>
+                    <a th:href="@{/servicio/listado}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paw"></i> [[#{index.campana.boton}]]</a>
+                </div>
+            </section>
+
+            <!-- Video: para cambiar el video solo se modifica el ID en th:with -->
+            <section class="container pb-5" th:with="videoId='sppNnsF0gUk'">
+                <h3 class="text-center mb-4"><i class="fas fa-dog"></i> [[#{index.video.titulo}]]</h3>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="ratio ratio-16x9 video-petshop">
+                            <iframe th:src="'https://www.youtube-nocookie.com/embed/' + ${videoId}"
+                                    th:title="#{index.video.titulo}"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formulario de consultas -->
+            <section id="consultas" class="container pb-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h4 class="mb-0"><i class="fas fa-envelope"></i> [[#{consultas.titulo}]]</h4>
+                            </div>
+                            <div class="card-body">
+                                <p>[[#{consultas.texto}]]</p>
+                                <form th:action="@{/consultas/enviar}" method="post" class="was-validated">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="nombre">[[#{consultas.nombre}]]</label>
+                                            <input type="text" class="form-control" id="nombre" name="nombre" maxlength="100" required/>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="correo">[[#{consultas.correo}]]</label>
+                                            <input type="email" class="form-control" id="correo" name="correo" maxlength="100" required/>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nombreMascota">[[#{consultas.mascota}]]</label>
+                                        <input type="text" class="form-control" id="nombreMascota" name="nombreMascota" maxlength="100" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="mensaje">[[#{consultas.mensaje}]]</label>
+                                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" maxlength="500" required></textarea>
+                                    </div>
+                                    <div class="text-end">
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fas fa-paper-plane"></i> [[#{accion.enviar}]]</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
     </body>
 </html>
